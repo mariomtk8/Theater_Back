@@ -1,0 +1,11 @@
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Business\bin\Debug\net8.0\UrbanTheater.Business.deps.json
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Business\bin\Debug\net8.0\UrbanTheater.Business.dll
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Business\bin\Debug\net8.0\UrbanTheater.Business.pdb
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Business\obj\Debug\net8.0\UrbanTheater.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Business\obj\Debug\net8.0\UrbanTheater.Business.AssemblyInfoInputs.cache
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Business\obj\Debug\net8.0\UrbanTheater.Business.AssemblyInfo.cs
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Business\obj\Debug\net8.0\UrbanTheater.Business.csproj.CoreCompileInputs.cache
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Business\obj\Debug\net8.0\UrbanTheater.Business.dll
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Business\obj\Debug\net8.0\refint\UrbanTheater.Business.dll
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Business\obj\Debug\net8.0\UrbanTheater.Business.pdb
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Business\obj\Debug\net8.0\ref\UrbanTheater.Business.dll

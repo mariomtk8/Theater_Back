@@ -1,0 +1,11 @@
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Data\bin\Debug\net8.0\UrbanTheater.Data.deps.json
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Data\bin\Debug\net8.0\UrbanTheater.Data.dll
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Data\bin\Debug\net8.0\UrbanTheater.Data.pdb
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Data\obj\Debug\net8.0\UrbanTheater.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Data\obj\Debug\net8.0\UrbanTheater.Data.AssemblyInfoInputs.cache
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Data\obj\Debug\net8.0\UrbanTheater.Data.AssemblyInfo.cs
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Data\obj\Debug\net8.0\UrbanTheater.Data.csproj.CoreCompileInputs.cache
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Data\obj\Debug\net8.0\UrbanTheater.Data.dll
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Data\obj\Debug\net8.0\refint\UrbanTheater.Data.dll
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Data\obj\Debug\net8.0\UrbanTheater.Data.pdb
+C:\Users\mario\OneDrive\Escritorio\Urban-Theater2.0\Data\obj\Debug\net8.0\ref\UrbanTheater.Data.dll

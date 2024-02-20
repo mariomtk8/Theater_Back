@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanTheater.Models", "Models\UrbanTheater.Models.csproj", "{B8B0469B-E001-4D60-8362-E856868A17F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanTheater.Data", "Data\UrbanTheater.Data.csproj", "{5DF18ED5-4C7E-43F3-9096-B7DDFEED0903}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanTheater.Business", "Business\UrbanTheater.Business.csproj", "{9CF37DC9-3719-48D1-8E6E-025918256353}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrbanTheater.Api", "Api\UrbanTheater.Api.csproj", "{F43166E2-92BB-423F-B379-3BCDDC08847A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8B0469B-E001-4D60-8362-E856868A17F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8B0469B-E001-4D60-8362-E856868A17F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8B0469B-E001-4D60-8362-E856868A17F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8B0469B-E001-4D60-8362-E856868A17F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DF18ED5-4C7E-43F3-9096-B7DDFEED0903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF18ED5-4C7E-43F3-9096-B7DDFEED0903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF18ED5-4C7E-43F3-9096-B7DDFEED0903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF18ED5-4C7E-43F3-9096-B7DDFEED0903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CF37DC9-3719-48D1-8E6E-025918256353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF37DC9-3719-48D1-8E6E-025918256353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF37DC9-3719-48D1-8E6E-025918256353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF37DC9-3719-48D1-8E6E-025918256353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F43166E2-92BB-423F-B379-3BCDDC08847A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F43166E2-92BB-423F-B379-3BCDDC08847A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F43166E2-92BB-423F-B379-3BCDDC08847A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F43166E2-92BB-423F-B379-3BCDDC08847A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
