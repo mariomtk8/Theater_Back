@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UrbanTheater.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36e9bdd30079d10cdbf5488928bc75bc49786d7e")]
 [assembly: System.Reflection.AssemblyProductAttribute("UrbanTheater.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UrbanTheater.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
