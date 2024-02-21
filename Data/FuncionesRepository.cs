@@ -22,7 +22,7 @@ namespace UrbanTheater.Data
 
         public Funciones Get(int id)
         {
-            return _context.Funciones.FirstOrDefault(funciones => funciones.ID == id);
+            return _context.Funciones.AsNoTracking().FirstOrDefault(funciones => funciones.ID == id);
         }
 
         public void Add(Funciones funciones)

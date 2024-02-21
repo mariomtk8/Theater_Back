@@ -3,7 +3,7 @@ using UrbanTheater.Models;
 using UrbanTheater.Business;
 using System.Collections.Generic;
 
-namespace TetePizza.Controllers
+namespace UrbanTheater.Controllers
 {
     [ApiController]
     [Route("[controller]")]

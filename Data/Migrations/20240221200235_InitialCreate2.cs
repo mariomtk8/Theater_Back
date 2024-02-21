@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -7,7 +8,7 @@
 namespace UrbanTheater.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitialCreate2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,6 +33,46 @@ namespace UrbanTheater.Data.Migrations
                     table.PrimaryKey("PK_Funciones", x => x.ID);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Sesiones",
+                columns: table => new
+                {
+                    IdSesion = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ID = table.Column<int>(type: "int", nullable: false),
+                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sesiones", x => x.IdSesion);
+                    table.ForeignKey(
+                        name: "FK_Sesiones_Funciones_ID",
+                        column: x => x.ID,
+                        principalTable: "Funciones",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Asientos",
+                columns: table => new
+                {
+                    IdAsiento = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdSesion = table.Column<int>(type: "int", nullable: false),
+                    IsFree = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Asientos", x => x.IdAsiento);
+                    table.ForeignKey(
+                        name: "FK_Asientos_Sesiones_IdSesion",
+                        column: x => x.IdSesion,
+                        principalTable: "Sesiones",
+                        principalColumn: "IdSesion",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "Funciones",
                 columns: new[] { "ID", "Actores", "Autores", "Cartel", "Descripcion", "Duracion", "Fechas", "Imagenes", "Nombre" },
@@ -45,11 +86,48 @@ namespace UrbanTheater.Data.Migrations
                     { 6, "[\"Elena S\\u00E1nchez\",\"Carlos P\\u00E9rez\",\"Mar\\u00EDa L\\u00F3pez\",\"Jos\\u00E9 Torres\",\"Laura Jim\\u00E9nez\"]", "[\"Ana Garc\\u00EDa\",\"Luis Hern\\u00E1ndez\"]", "https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/BodasDeSangre/BodasDeSangre.jpg", "Una comedia romántica contemporánea que sigue la historia de varias parejas que se preparan para sus respectivas bodas. La obra teje una trama llena de enredos amorosos, malentendidos cómicos y momentos de reflexión sobre las relaciones y el matrimonio.", 2, "[\"2024-08-02 - 21:00\",\"2024-08-12 - 20:00\",\"2024-08-21 - 21:00\"]", "[\"https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/BodasDeSangre/BodasDeSangre_NF2.jpg\",\"https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/BodasDeSangre/BodasDeSangre_NF.jpg\"]", "Bodas de sangre" },
                     { 7, "[\"Augusto Gonz\\u00E1lez\",\"Fernando Ard\\u00E9vol\",\"Juan Luis Garc\\u00EDa\"]", "[\"Alberto Marca\",\"Carlos Marco\"]", "https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/B-vocal/b-vocal_LG.jpg", "Un aclamado grupo vocal que destaca por su habilidad para fusionar a cappella y comedia en sus actuaciones. B-Vocal cautiva al público con su mezcla única de música, humor y la sorprendente habilidad de crear sonidos instrumentales con sus voces, explorando diversos géneros musicales desde el pop hasta el clásico.", 1, "[\"2024-09-01 - 21:00\",\"2024-09-03 - 22:30\",\"2024-09-10 - 23:00\"]", "[\"https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/B-vocal/b-vocal_NF.jpg\",\"https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/B-vocal/b.jpg\"]", "B-Vocal" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Sesiones",
+                columns: new[] { "IdSesion", "Fecha", "ID" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2024, 3, 3, 21, 0, 0, 0, DateTimeKind.Unspecified), 1 },
+                    { 2, new DateTime(2024, 3, 9, 22, 0, 0, 0, DateTimeKind.Unspecified), 1 },
+                    { 3, new DateTime(2024, 1, 7, 20, 30, 0, 0, DateTimeKind.Unspecified), 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Asientos",
+                columns: new[] { "IdAsiento", "IdSesion", "IsFree" },
+                values: new object[,]
+                {
+                    { 1, 1, true },
+                    { 2, 1, true },
+                    { 3, 2, true },
+                    { 4, 2, false }
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Asientos_IdSesion",
+                table: "Asientos",
+                column: "IdSesion");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sesiones_ID",
+                table: "Sesiones",
+                column: "ID");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Asientos");
+
+            migrationBuilder.DropTable(
+                name: "Sesiones");
+
             migrationBuilder.DropTable(
                 name: "Funciones");
         }

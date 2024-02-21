@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using UrbanTheater.Models;
 using System.Text.Json;
+
 namespace UrbanTheater.Data
 {
     public class UrbanTheaterAppContext : DbContext
@@ -11,9 +12,22 @@ namespace UrbanTheater.Data
         }
 
         public DbSet<Funciones> Funciones { get; set; }
+        public DbSet<Sesiones> Sesiones { get; set; }
+        public DbSet<Asientos> Asientos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Funciones>()
+                .HasMany(f => f.Sesiones)
+                .WithOne(s => s.Funcion)
+                .HasForeignKey(s => s.ID);
+
+            modelBuilder.Entity<Sesiones>()
+                .HasMany(s => s.Asientos)
+                .WithOne(a => a.Sesion)
+                .HasForeignKey(a => a.IdSesion); 
             modelBuilder.Entity<Funciones>().HasData(
                     new Funciones
                     {
@@ -100,6 +114,18 @@ namespace UrbanTheater.Data
                         Cartel = "https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/B-vocal/b-vocal_LG.jpg"
                     }
             );
+            modelBuilder.Entity<Sesiones>().HasData(
+                new Sesiones { IdSesion = 1, ID = 1, Fecha = new DateTime(2024, 3, 3, 21, 0, 0) },
+                new Sesiones { IdSesion = 2, ID = 1, Fecha = new DateTime(2024, 3, 9, 22, 0, 0) },
+                new Sesiones { IdSesion = 3, ID = 2, Fecha = new DateTime(2024, 1, 7, 20, 30, 0) }
+            );
+            modelBuilder.Entity<Asientos>().HasData(
+                new Asientos { IdAsiento = 1, IdSesion = 1, IsFree = true },
+                new Asientos { IdAsiento = 2, IdSesion = 1, IsFree = true },
+                new Asientos { IdAsiento = 3, IdSesion = 2, IsFree = true },
+                new Asientos { IdAsiento = 4, IdSesion = 2, IsFree = false }
+        
+    );
         }
     }
 }

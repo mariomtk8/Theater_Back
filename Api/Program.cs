@@ -20,6 +20,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<FuncionesService>();
 builder.Services.AddScoped<IFuncionesRepository,FuncionesRepository>();
 
+builder.Services.AddScoped<ISesionesService, SesionesService>();
+builder.Services.AddScoped<ISesionesRepository, SesionesRepository>();
+
+// Registra el servicio y el repositorio de Asientos
+builder.Services.AddScoped<IAsientosService, AsientosService>();
+builder.Services.AddScoped<IAsientosRepository, AsientosRepository>();
 
 
 builder.Services.AddCors(options =>
