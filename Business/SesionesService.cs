@@ -36,6 +36,7 @@ namespace UrbanTheater.Business
             Fecha = sesion.Fecha
         };
     }
+    public List<Sesiones> GetAll() => _sesionesRepository.GetAll();
 
     // Implementa métodos para Add y Delete si es necesario, usando DTOs para la creación
 }

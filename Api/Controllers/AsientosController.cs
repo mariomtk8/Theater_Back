@@ -9,30 +9,29 @@ namespace UrbanTheater.Controllers
 [Route("[controller]")]
 public class AsientosController : ControllerBase
 {
-    private readonly AsientosService _asientosService;
+    private readonly IAsientosService _asientosService;
 
-    public AsientosController(AsientosService asientosService)
+    public AsientosController(IAsientosService asientosService)
     {
         _asientosService = asientosService;
     }
 
-    [HttpGet("{sesionId}")]
-    public ActionResult<List<Asientos>> GetAllBySesionId(int sesionId)
+    [HttpGet("BySesion/{sesionId}")]
+    public ActionResult<IEnumerable<AsientoReadDTO>> GetAsientosBySesionId(int sesionId)
     {
-        return _asientosService.GetAllBySesionId(sesionId);
+        var asientos = _asientosService.GetAsientosBySesionId(sesionId);
+        if (asientos == null) return NotFound();
+        return Ok(asientos);
     }
 
-    [HttpGet("asiento/{id}")]
-    public ActionResult<Asientos> Get(int id)
+    [HttpGet("{id}")]
+    public ActionResult<AsientoReadDTO> Get(int id)
     {
         var asiento = _asientosService.Get(id);
-
-        if (asiento == null)
-            return NotFound();
-
-        return asiento;
+        if (asiento == null) return NotFound();
+        return Ok(asiento);
     }
 
-    // Métodos PUT, DELETE según sea necesario
+    // Implementa endpoints para POST, PUT, DELETE según necesidad...
 }
 }

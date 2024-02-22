@@ -9,6 +9,6 @@ public class Asientos
     public int IdAsiento { get; set; }
     public int IdSesion { get; set; }
     [ForeignKey("IdSesion")]
-     public virtual Sesiones Sesion { get; set; }
+     public Sesiones Sesion { get; set; }
     public bool IsFree { get; set; }
 }

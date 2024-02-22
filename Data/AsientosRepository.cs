@@ -14,12 +14,7 @@ namespace UrbanTheater.Data
         _context = context;
     }
 
-    public List<Asientos> GetAll()
-    {
-        return _context.Asientos.ToList();
-    }
-
-    public List<Asientos> GetAllBySesionId(int sesionId)
+    public IEnumerable<Asientos> GetAsientosBySesionId(int sesionId)
     {
         return _context.Asientos.Where(a => a.IdSesion == sesionId).ToList();
     }

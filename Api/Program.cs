@@ -23,10 +23,12 @@ builder.Services.AddSwaggerGen();
             errorNumbersToAdd: null); // Conjunto opcional de números de error para considerar como fallos transitorios
     }));
 
-builder.Services.AddScoped<IFuncionesService>();
+builder.Services.AddScoped<IFuncionesService, FuncionesService>();
 builder.Services.AddScoped<IFuncionesRepository, FuncionesRepository>();
+
 builder.Services.AddScoped<ISesionesService, SesionesService>();
 builder.Services.AddScoped<ISesionesRepository, SesionesRepository>();
+
 builder.Services.AddScoped<IAsientosService, AsientosService>();
 builder.Services.AddScoped<IAsientosRepository, AsientosRepository>();
 

@@ -13,19 +13,53 @@ namespace UrbanTheater.Business
         _asientosRepository = asientosRepository;
     }
 
-    public List<Asientos> GetAllBySesionId(int sesionId)
+    public IEnumerable<AsientoReadDTO> GetAsientosBySesionId(int sesionId)
     {
-        return _asientosRepository.GetAllBySesionId(sesionId);
+        var asientos = _asientosRepository.GetAsientosBySesionId(sesionId);
+        return asientos.Select(a => new AsientoReadDTO
+        {
+            IdAsiento = a.IdAsiento,
+            IsFree = a.IsFree,
+            IdSesion = a.IdSesion
+        }).ToList();
     }
 
-    public Asientos Get(int id)
+    public AsientoReadDTO Get(int id)
     {
-        return _asientosRepository.Get(id);
+        var asiento = _asientosRepository.Get(id);
+        if (asiento == null) return null;
+        return new AsientoReadDTO
+        {
+            IdAsiento = asiento.IdAsiento,
+            IsFree = asiento.IsFree,
+            IdSesion = asiento.IdSesion
+        };
     }
 
-    public void Update(Asientos asiento)
+    public void Add(AsientoCreateUpdateDTO asientoDto)
     {
-        _asientosRepository.Update(asiento);
+        var newAsiento = new Asientos
+        {
+            IsFree = asientoDto.IsFree,
+            IdSesion = asientoDto.IdSesion
+        };
+        _asientosRepository.Add(newAsiento);
+    }
+
+    public void Update(int id, AsientoCreateUpdateDTO asientoDto)
+    {
+        var asiento = _asientosRepository.Get(id);
+        if (asiento != null)
+        {
+            asiento.IsFree = asientoDto.IsFree;
+            // asiento.IdSesion = asientoDto.IdSesion; // Consider if updating session ID is allowed
+            _asientosRepository.Update(asiento);
+        }
+    }
+
+    public void Delete(int id)
+    {
+        _asientosRepository.Delete(id);
     }
 }
 }

@@ -15,6 +15,8 @@ public class SesionesController : ControllerBase
     {
         _sesionesService = sesionesService;
     }
+    [HttpGet]
+        public ActionResult<List<Sesiones>> GetAll() => _sesionesService.GetAll();
 
     [HttpGet("{funcionId}")]
     public ActionResult<List<SesionesReadDTO>> GetAllByFuncionId(int funcionId)

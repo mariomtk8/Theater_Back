@@ -4,9 +4,11 @@ using UrbanTheater.Models;
 namespace UrbanTheater.Business
 {
     public interface IAsientosService
-    {
-        List<Asientos> GetAllBySesionId(int sesionId);
-        Asientos Get(int id);
-        void Update(Asientos asiento);
-    }
+{
+    IEnumerable<AsientoReadDTO> GetAsientosBySesionId(int sesionId);
+    AsientoReadDTO Get(int id);
+    void Add(AsientoCreateUpdateDTO asientoDto);
+    void Update(int id, AsientoCreateUpdateDTO asientoDto);
+    void Delete(int id);
+}
 }

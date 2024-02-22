@@ -10,9 +10,9 @@ namespace UrbanTheater.Controllers
 
     public class FuncionesController : ControllerBase
     {
-        private readonly FuncionesService _funcionService;
+        private readonly IFuncionesService _funcionService;
 
-        public FuncionesController(FuncionesService funcionService)
+        public FuncionesController(IFuncionesService funcionService)
         {
             _funcionService = funcionService;
         }
