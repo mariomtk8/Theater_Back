@@ -34,3 +34,15 @@ C:\Users\S2-PC00\Desktop\Theater_Back\Models\obj\Debug\net7.0\UrbanTheater.Model
 C:\Users\S2-PC00\Desktop\Theater_Back\Models\obj\Debug\net7.0\refint\UrbanTheater.Models.dll
 C:\Users\S2-PC00\Desktop\Theater_Back\Models\obj\Debug\net7.0\UrbanTheater.Models.pdb
 C:\Users\S2-PC00\Desktop\Theater_Back\Models\obj\Debug\net7.0\ref\UrbanTheater.Models.dll
+C:\Users\mario\OneDrive\Escritorio\Theater_Back\Models\bin\Debug\net7.0\UrbanTheater.Models.deps.json
+C:\Users\mario\OneDrive\Escritorio\Theater_Back\Models\bin\Debug\net7.0\UrbanTheater.Models.dll
+C:\Users\mario\OneDrive\Escritorio\Theater_Back\Models\bin\Debug\net7.0\UrbanTheater.Models.pdb
+C:\Users\mario\OneDrive\Escritorio\Theater_Back\Models\obj\Debug\net7.0\UrbanTheater.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mario\OneDrive\Escritorio\Theater_Back\Models\obj\Debug\net7.0\UrbanTheater.Models.AssemblyInfoInputs.cache
+C:\Users\mario\OneDrive\Escritorio\Theater_Back\Models\obj\Debug\net7.0\UrbanTheater.Models.AssemblyInfo.cs
+C:\Users\mario\OneDrive\Escritorio\Theater_Back\Models\obj\Debug\net7.0\UrbanTheater.Models.csproj.CoreCompileInputs.cache
+C:\Users\mario\OneDrive\Escritorio\Theater_Back\Models\obj\Debug\net7.0\UrbanTheater.Models.sourcelink.json
+C:\Users\mario\OneDrive\Escritorio\Theater_Back\Models\obj\Debug\net7.0\UrbanTheater.Models.dll
+C:\Users\mario\OneDrive\Escritorio\Theater_Back\Models\obj\Debug\net7.0\refint\UrbanTheater.Models.dll
+C:\Users\mario\OneDrive\Escritorio\Theater_Back\Models\obj\Debug\net7.0\UrbanTheater.Models.pdb
+C:\Users\mario\OneDrive\Escritorio\Theater_Back\Models\obj\Debug\net7.0\ref\UrbanTheater.Models.dll

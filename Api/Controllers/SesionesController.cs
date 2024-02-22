@@ -9,30 +9,29 @@ namespace UrbanTheater.Controllers
 [Route("[controller]")]
 public class SesionesController : ControllerBase
 {
-    private readonly SesionesService _sesionesService;
+    private readonly ISesionesService _sesionesService;
 
-    public SesionesController(SesionesService sesionesService)
+    public SesionesController(ISesionesService sesionesService)
     {
         _sesionesService = sesionesService;
     }
 
     [HttpGet("{funcionId}")]
-    public ActionResult<List<Sesiones>> GetAllByFuncionId(int funcionId)
+    public ActionResult<List<SesionesReadDTO>> GetAllByFuncionId(int funcionId)
     {
-        return _sesionesService.GetAllByFuncionId(funcionId);
+        var sesiones = _sesionesService.GetAllByFuncionId(funcionId);
+        if (sesiones == null) return NotFound();
+        return Ok(sesiones);
     }
 
     [HttpGet("sesion/{id}")]
-    public ActionResult<Sesiones> Get(int id)
+    public ActionResult<SesionesReadDTO> Get(int id)
     {
         var sesion = _sesionesService.Get(id);
-
-        if (sesion == null)
-            return NotFound();
-
-        return sesion;
+        if (sesion == null) return NotFound();
+        return Ok(sesion);
     }
 
-    // Métodos PUT, DELETE según sea necesario
+    // Agrega endpoints para POST y DELETE si es necesario, usando DTOs
 }
 }

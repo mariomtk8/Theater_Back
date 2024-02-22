@@ -15,17 +15,27 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
     builder.Services.AddDbContext<UrbanTheaterAppContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(connectionString, sqlServerOptionsAction: sqlOptions =>
+    {
+        sqlOptions.EnableRetryOnFailure(
+            maxRetryCount: 5, // Número máximo de reintentos antes de fallar definitivamente
+            maxRetryDelay: TimeSpan.FromSeconds(30), // Tiempo de espera entre reintentos
+            errorNumbersToAdd: null); // Conjunto opcional de números de error para considerar como fallos transitorios
+    }));
 
-builder.Services.AddScoped<FuncionesService>();
-builder.Services.AddScoped<IFuncionesRepository,FuncionesRepository>();
-
+builder.Services.AddScoped<IFuncionesService>();
+builder.Services.AddScoped<IFuncionesRepository, FuncionesRepository>();
 builder.Services.AddScoped<ISesionesService, SesionesService>();
 builder.Services.AddScoped<ISesionesRepository, SesionesRepository>();
-
-// Registra el servicio y el repositorio de Asientos
 builder.Services.AddScoped<IAsientosService, AsientosService>();
 builder.Services.AddScoped<IAsientosRepository, AsientosRepository>();
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+    });
+
 
 
 builder.Services.AddCors(options =>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace UrbanTheater.Business
 {
-    public class SesionesService : ISesionesService
+    public class SesionesService : ISesionesService 
 {
     private readonly ISesionesRepository _sesionesRepository;
 
@@ -13,19 +13,30 @@ namespace UrbanTheater.Business
         _sesionesRepository = sesionesRepository;
     }
 
-    public List<Sesiones> GetAllByFuncionId(int funcionId)
+    public List<SesionesReadDTO> GetAllByFuncionId(int funcionId)
     {
-        return _sesionesRepository.GetAllByFuncionId(funcionId);
+        var sesiones = _sesionesRepository.GetAllByFuncionId(funcionId);
+        return sesiones.Select(s => new SesionesReadDTO
+        {
+            IdSesion = s.IdSesion,
+            FuncionId = s.ID,
+            Fecha = s.Fecha
+        }).ToList();
     }
 
-    public Sesiones Get(int id)
+    public SesionesReadDTO Get(int id)
     {
-        return _sesionesRepository.Get(id);
+        var sesion = _sesionesRepository.Get(id);
+        if (sesion == null) return null;
+
+        return new SesionesReadDTO
+        {
+            IdSesion = sesion.IdSesion,
+            FuncionId = sesion.ID,
+            Fecha = sesion.Fecha
+        };
     }
 
-    public void Update(Sesiones sesion)
-    {
-        _sesionesRepository.Update(sesion);
-    }
+    // Implementa métodos para Add y Delete si es necesario, usando DTOs para la creación
 }
 }

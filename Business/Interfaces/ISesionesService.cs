@@ -5,8 +5,7 @@ namespace UrbanTheater.Business
 {
     public interface ISesionesService
     {
-        List<Sesiones> GetAllByFuncionId(int funcionId);
-        Sesiones Get(int id);
-        void Update(Sesiones sesion);
+        List<SesionesReadDTO> GetAllByFuncionId(int funcionId); // Usa DTOs aquí
+        SesionesReadDTO Get(int id);
     }
 }
