@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema; 
+﻿using System.ComponentModel.DataAnnotations.Schema; // Importa este espacio de nombres
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization; 
 using System.Text.Json; 
@@ -19,7 +19,6 @@ public class Funciones
     public string Imagenes { get; set; }
     public string Fechas { get; set; }
     public string Cartel { get; set; }
-    public virtual ICollection<Sesiones> Sesiones { get; set; } = new List<Sesiones>();
 
     
     [NotMapped]

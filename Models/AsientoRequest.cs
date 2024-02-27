@@ -1,14 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 
-
 namespace UrbanTheater.Models;
 
-public class Asientos
+
+public class AsientoRequest
 {
-    public Asientos() { }
-
-    [Key]
-    public int IdAsiento { get; set; }
+    public int AsientoId { get; set; }
     public bool IsFree { get; set; }
-
 }

@@ -5,61 +5,17 @@ using System.Collections.Generic;
 namespace UrbanTheater.Business
 {
     public class AsientosService : IAsientosService
-{
-    private readonly IAsientosRepository _asientosRepository;
-
-    public AsientosService(IAsientosRepository asientosRepository)
     {
-        _asientosRepository = asientosRepository;
-    }
+        private readonly IAsientosRepository _asientosRepository;
 
-    public IEnumerable<AsientoReadDTO> GetAsientosBySesionId(int sesionId)
-    {
-        var asientos = _asientosRepository.GetAsientosBySesionId(sesionId);
-        return asientos.Select(a => new AsientoReadDTO
+        public AsientosService(IAsientosRepository asientosRepository)
         {
-            IdAsiento = a.IdAsiento,
-            IsFree = a.IsFree,
-            IdSesion = a.IdSesion
-        }).ToList();
-    }
+            _asientosRepository = asientosRepository;
+        }
 
-    public AsientoReadDTO Get(int id)
-    {
-        var asiento = _asientosRepository.Get(id);
-        if (asiento == null) return null;
-        return new AsientoReadDTO
+        public List<Asientos> GetAll()
         {
-            IdAsiento = asiento.IdAsiento,
-            IsFree = asiento.IsFree,
-            IdSesion = asiento.IdSesion
-        };
-    }
-
-    public void Add(AsientoCreateUpdateDTO asientoDto)
-    {
-        var newAsiento = new Asientos
-        {
-            IsFree = asientoDto.IsFree,
-            IdSesion = asientoDto.IdSesion
-        };
-        _asientosRepository.Add(newAsiento);
-    }
-
-    public void Update(int id, AsientoCreateUpdateDTO asientoDto)
-    {
-        var asiento = _asientosRepository.Get(id);
-        if (asiento != null)
-        {
-            asiento.IsFree = asientoDto.IsFree;
-            // asiento.IdSesion = asientoDto.IdSesion; // Consider if updating session ID is allowed
-            _asientosRepository.Update(asiento);
+            return _asientosRepository.GetAll();
         }
     }
-
-    public void Delete(int id)
-    {
-        _asientosRepository.Delete(id);
-    }
-}
 }

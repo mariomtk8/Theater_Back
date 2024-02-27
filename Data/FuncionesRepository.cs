@@ -43,5 +43,31 @@ namespace UrbanTheater.Data
             _context.Funciones.Remove(funcion);
             _context.SaveChanges();
         }
+
+        public List<int> GetFuncionesAsientos(int FuncionID, int IdSesion)
+        {
+            var asientosId = _context.AsientosFunciones
+                .Where(id => id.IdFuncion == FuncionID && id.IdSesion == IdSesion)
+                .Select(p => p.IdAsiento) 
+                .ToList(); 
+
+            return asientosId; 
+        }
+
+
+        public void AddAsientoToFuncion(int funcionId, int sessionId, int idAsiento, bool isFree)
+        {
+            var nuevoAsiento = new AsientosFunciones
+            {
+                IdFuncion = funcionId,
+                IdSesion = sessionId,
+                IdAsiento = idAsiento,
+                IsFree = isFree
+            };
+
+            _context.AsientosFunciones.Add(nuevoAsiento);
+            _context.SaveChanges();
+        }
     }
+
 }

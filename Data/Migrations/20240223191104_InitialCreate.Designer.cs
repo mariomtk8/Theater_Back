@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UrbanTheater.Data;
 
@@ -10,9 +11,11 @@ using UrbanTheater.Data;
 namespace UrbanTheater.Data.Migrations
 {
     [DbContext(typeof(UrbanTheaterAppContext))]
-    partial class UrbanTheaterAppContextModelSnapshot : ModelSnapshot
+    [Migration("20240223191104_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
