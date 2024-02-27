@@ -71,7 +71,7 @@ namespace UrbanTheater.Controllers
         }
 
 
-        [HttpGet("{IdFuncion}/Sesion/{Idsesion}/VerAsientos")]
+        [HttpGet("{IdFuncion}/Sesion/{Idsesion}")]
         public ActionResult<List<AsientosDTO>> GetSeat(int IdFuncion, int Idsesion)
         {
             var asientosId = _funcionService.GetFuncionesAsientos(IdFuncion, Idsesion);
@@ -85,7 +85,7 @@ namespace UrbanTheater.Controllers
         }
 
 
-        [HttpPost("{IdFuncion}/Sesion/{Idsesion}/AñadirAsientos")]
+        [HttpPost("{IdFuncion}/Sesion/{Idsesion}/ReservarAsiento")]
         public IActionResult AddAsientosToSession(int IdFuncion, int Idsesion, [FromBody] AsientoRequest asientoRequest)
         {
             if (asientoRequest == null)
