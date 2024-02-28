@@ -14,6 +14,8 @@ namespace UrbanTheater.Data
 
         public DbSet<Asientos> Asientos { get; set; }
         public DbSet<AsientosFunciones> AsientosFunciones { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Administrador> Administradores { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

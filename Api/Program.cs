@@ -29,6 +29,12 @@ builder.Services.AddScoped<IFuncionesRepository,FuncionesRepository>();
 builder.Services.AddScoped<AsientosService>();
 builder.Services.AddScoped<IAsientosRepository, AsientosRepository>();
 
+builder.Services.AddScoped<UsuariosService>();
+builder.Services.AddScoped<IUsuariosRepository, UsuariosRepository>();
+
+builder.Services.AddScoped<AdminService>();
+builder.Services.AddScoped<IAdminRepository, AdminRepository>();
+
 
 
 builder.Services.AddCors(options =>

@@ -71,10 +71,10 @@ namespace UrbanTheater.Controllers
         }
 
 
-        [HttpGet("{IdFuncion}/Sesion/{Idsesion}")]
-        public ActionResult<List<AsientosDTO>> GetSeat(int IdFuncion, int Idsesion)
+        [HttpGet("{id}/Sesion/{Idsesion}")]
+        public ActionResult<List<AsientosDTO>> GetSeat(int id, int Idsesion)
         {
-            var asientosId = _funcionService.GetFuncionesAsientos(IdFuncion, Idsesion);
+            var asientosId = _funcionService.GetFuncionesAsientos(id, Idsesion);
 
             if (asientosId == null || asientosId.Count == 0)
             {
@@ -85,15 +85,18 @@ namespace UrbanTheater.Controllers
         }
 
 
-        [HttpPost("{IdFuncion}/Sesion/{Idsesion}/ReservarAsiento")]
-        public IActionResult AddAsientosToSession(int IdFuncion, int Idsesion, [FromBody] AsientoRequest asientoRequest)
+        [HttpPost("{id}/Sesion/{Idsesion}/ReservarAsiento")]
+        public IActionResult AddAsientosToSession(int id, int Idsesion, [FromBody] List<Asientos> ListadoAsientos)
         {
-            if (asientoRequest == null)
+            if (ListadoAsientos == null || ListadoAsientos.Count == 0)
             {
                 return BadRequest("No hay información de asiento para agregar.");
             }
 
-            _funcionService.AddAsientoToFuncion(IdFuncion, Idsesion, asientoRequest.AsientoId, asientoRequest.IsFree);
+            foreach (var CatchAsiento in ListadoAsientos)
+            {
+                _funcionService.AddAsientoToFuncion(id, Idsesion, CatchAsiento.IdAsiento, CatchAsiento.IsFree);
+            }
             return Ok("Asiento Añadido.");
         }
     }

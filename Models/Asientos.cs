@@ -9,6 +9,6 @@ public class Asientos
 
     [Key]
     public int IdAsiento { get; set; }
-    public bool isFree { get; set; }
+    public bool IsFree { get; set; }
 
 }
