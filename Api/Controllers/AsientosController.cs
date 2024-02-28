@@ -1,37 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 using UrbanTheater.Models;
 using UrbanTheater.Business;
-using System.Collections.Generic;
+using System;
 
-namespace UrbanTheater.Controllers
+namespace UrbanTheater.Api.Controllers
 {
     [ApiController]
-[Route("[controller]")]
-public class AsientosController : ControllerBase
-{
-    private readonly IAsientosService _asientosService;
-
-    public AsientosController(IAsientosService asientosService)
+    [Route("[controller]")]
+    public class AsientosController : ControllerBase
     {
-        _asientosService = asientosService;
-    }
+        private readonly AsientosService _asientosService;
 
-    [HttpGet("BySesion/{sesionId}")]
-    public ActionResult<IEnumerable<AsientoReadDTO>> GetAsientosBySesionId(int sesionId)
-    {
-        var asientos = _asientosService.GetAsientosBySesionId(sesionId);
-        if (asientos == null) return NotFound();
-        return Ok(asientos);
-    }
+        public AsientosController(AsientosService asientosService)
+        {
+            _asientosService = asientosService;
+        }
 
-    [HttpGet("{id}")]
-    public ActionResult<AsientoReadDTO> Get(int id)
-    {
-        var asiento = _asientosService.Get(id);
-        if (asiento == null) return NotFound();
-        return Ok(asiento);
+        [HttpGet]
+        public ActionResult<List<Asientos>> GetAll() => _asientosService.GetAll();
     }
-
-    // Implementa endpoints para POST, PUT, DELETE según necesidad...
-}
 }

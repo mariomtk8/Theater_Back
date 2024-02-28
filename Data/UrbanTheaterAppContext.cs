@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using UrbanTheater.Models;
 using System.Text.Json;
-
 namespace UrbanTheater.Data
 {
     public class UrbanTheaterAppContext : DbContext
@@ -12,25 +11,12 @@ namespace UrbanTheater.Data
         }
 
         public DbSet<Funciones> Funciones { get; set; }
-        public DbSet<Sesiones> Sesiones { get; set; }
+
         public DbSet<Asientos> Asientos { get; set; }
+        public DbSet<AsientosFunciones> AsientosFunciones { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-    // Configuración para Funciones y Sesiones
-    modelBuilder.Entity<Funciones>()
-        .HasMany(f => f.Sesiones)
-        .WithOne(s => s.Funcion)
-        .HasForeignKey(s => s.ID); // Asegura que esto referencia a la clave primaria de Funciones correctamente
-
-    // Configuración para Sesiones y Asientos
-    modelBuilder.Entity<Sesiones>()
-        .HasMany(s => s.Asientos)
-        .WithOne(a => a.Sesion)
-        .HasForeignKey(a => a.IdSesion);
-
             modelBuilder.Entity<Funciones>().HasData(
                     new Funciones
                     {
@@ -117,33 +103,108 @@ namespace UrbanTheater.Data
                         Cartel = "https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/B-vocal/b-vocal_LG.jpg"
                     }
             );
-            int sesionCounter = 1; // Inicia el contador para IdSesion desde 1
-DateTime fechaInicial = new DateTime(2024, 3, 1); // Define una fecha inicial para las sesiones
-
-for (int funcionId = 1; funcionId <= 7; funcionId++) {
-    for (int sesionNum = 1; sesionNum <= 3; sesionNum++) {
-        DateTime fechaSesion = fechaInicial.AddDays((funcionId - 1) * 10 + sesionNum); // Ajusta la fecha para que cada sesión tenga una fecha única y espaciada
-
-        modelBuilder.Entity<Sesiones>().HasData(new Sesiones {
-            IdSesion = sesionCounter,
-            ID = funcionId,
-            Fecha = fechaSesion
-        });
-
-        sesionCounter++; // Incrementa el contador para asegurar un ID único para cada sesión
-    }
-}
-            int asientoCounter = 1; // Inicia el contador para IdAsiento
-for (int sesionId = 1; sesionId < sesionCounter; sesionId++) {
-    for (int asientoNum = 1; asientoNum <= 20; asientoNum++) {
-        modelBuilder.Entity<Asientos>().HasData(new Asientos {
-            IdAsiento = asientoCounter,
-            IdSesion = sesionId,
-            IsFree = true
-        });
-        asientoCounter++;
-    }
-}
+            modelBuilder.Entity<Asientos>().HasData(
+                new Asientos
+                {
+                    IdAsiento = 1,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 2,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 3,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 4,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 5,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 6,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 7,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 8,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 9,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 10,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 11,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 12,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 13,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 14,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 15,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 16,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 17,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 18,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 19,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 20,
+                    IsFree = true
+                }
+            );
         }
     }
 }

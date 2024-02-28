@@ -16,5 +16,20 @@ namespace UrbanTheater.Business
         public List<Funciones> GetAll() => _funcionesRepository.GetAll();
         public Funciones? Get(int id) => _funcionesRepository.Get(id);
         public void Update(Funciones funciones) => _funcionesRepository.Update(funciones);
+        public void Add(Funciones obra) => _funcionesRepository.Add(obra);
+        public void Delete(int id) => _funcionesRepository.Delete(id);
+
+        //-------------Asientos------------------------------------------------//
+
+        public List<int> GetFuncionesAsientos(int FuncionID, int IdSesion)
+        {
+            return _funcionesRepository.GetFuncionesAsientos(FuncionID, IdSesion);
+        }
+
+
+        public void AddAsientoToFuncion(int funcionId, int sessionId, int idAsiento, bool isFree)
+        {
+            _funcionesRepository.AddAsientoToFuncion(funcionId, sessionId, idAsiento, isFree);
+        }
     }
 }

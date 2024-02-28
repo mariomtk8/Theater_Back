@@ -1,15 +1,12 @@
-namespace UrbanTheater.Models
-{
-    public class AsientoReadDTO
-    {
-        public int IdAsiento { get; set; }
-        public bool IsFree { get; set; }
-        public int IdSesion { get; set; }
-    }
+using System.ComponentModel.DataAnnotations;
 
-    public class AsientoCreateUpdateDTO
-    {
-        public bool IsFree { get; set; }
-        public int IdSesion { get; set; }
-    }
+namespace UrbanTheater.Models;
+
+public class AsientosDTO
+{
+    public AsientosDTO() { }
+    public List<int> asientos { get; set; }
 }
+
+
+

@@ -1,14 +1,14 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace UrbanTheater.Models;
 
 public class Asientos
 {
+    public Asientos() { }
+
     [Key]
     public int IdAsiento { get; set; }
-    public int IdSesion { get; set; }
-    [ForeignKey("IdSesion")]
-     public virtual Sesiones Sesion { get; set; }
-    public bool IsFree { get; set; }
+    public bool isFree { get; set; }
+
 }
