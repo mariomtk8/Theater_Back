@@ -12,7 +12,7 @@ namespace UrbanTheater.Data
             _context = context;
         }
 
-        public Usuario Get(string nombreUsuario, string password)
+        public Usuarios Get(string nombreUsuario, string password)
         {
             var usuario = _context.Usuarios
                                   .Where(u => u.nombreUsuario == nombreUsuario && u.password == password)
@@ -23,7 +23,7 @@ namespace UrbanTheater.Data
         }
 
 
-        public void AddUsuario(Usuario usuario)
+        public void AddUsuario(Usuarios usuario)
         {
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();

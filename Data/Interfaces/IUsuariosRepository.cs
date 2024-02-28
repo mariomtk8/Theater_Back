@@ -5,7 +5,7 @@ namespace UrbanTheater.Data
 {
     public interface IUsuariosRepository
     {
-        Usuario Get(string nombreUsuario, string password);
-        void AddUsuario(Usuario usuario);
+        Usuarios Get(string nombreUsuario, string password);
+        void AddUsuario(Usuarios usuario);
     }
 }

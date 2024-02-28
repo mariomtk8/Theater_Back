@@ -2,9 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace UrbanTheater.Models;
 
-public class Usuario
+public class Usuarios
 {
-    public Usuario() { }
+    public Usuarios() { }
     [Key]
     public int idUsuario { get; set; }
     public string nombreUsuario { get; set; }

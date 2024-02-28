@@ -11,11 +11,10 @@ namespace UrbanTheater.Data
         }
 
         public DbSet<Funciones> Funciones { get; set; }
-
         public DbSet<Asientos> Asientos { get; set; }
         public DbSet<AsientosFunciones> AsientosFunciones { get; set; }
-        public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Administrador> Administradores { get; set; }
+        public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<Admin> Admin { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -203,8 +202,69 @@ namespace UrbanTheater.Data
                 },
                 new Asientos
                 {
-                    IdAsiento = 20,
+                    IdAsiento = 21,
                     IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 22,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 23,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 24,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 25,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 26,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 27,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 28,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 29,
+                    IsFree = true
+                },
+                new Asientos
+                {
+                    IdAsiento = 30,
+                    IsFree = true
+                }
+            );
+            modelBuilder.Entity<Usuarios>().HasData(
+                new Usuarios
+                {
+                idUsuario = 1,
+                nombreUsuario = "MarioCañizares",
+                password = "1234"
+                }
+            );
+            modelBuilder.Entity<Admin>().HasData(
+                new Admin
+                {
+                idAdministrador = 1,
+                nombreAdministrador = "Admin",
+                password = "1234"
                 }
             );
         }

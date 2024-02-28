@@ -2,9 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace UrbanTheater.Models;
 
-public class Administrador
+public class Admin
 {
-    public Administrador() { }
+    public Admin() { }
     [Key]
     public int idAdministrador { get; set; }
     public string nombreAdministrador { get; set; }

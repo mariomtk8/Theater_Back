@@ -12,12 +12,12 @@ namespace UrbanTheater.Business
             _usuarioRepository = usuarioRepository;
         }
 
-        public Usuario Get(string nombreUsuario, string password)
+        public Usuarios Get(string nombreUsuario, string password)
         {
             return _usuarioRepository.Get(nombreUsuario, password);
         }
 
-        public void AddUsuario(Usuario usuario)
+        public void AddUsuario(Usuarios usuario)
         {
             _usuarioRepository.AddUsuario(usuario);
         }

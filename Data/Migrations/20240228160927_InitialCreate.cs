@@ -13,6 +13,20 @@ namespace UrbanTheater.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Admin",
+                columns: table => new
+                {
+                    idAdministrador = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    nombreAdministrador = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    password = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Admin", x => x.idAdministrador);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Asientos",
                 columns: table => new
                 {
@@ -61,6 +75,25 @@ namespace UrbanTheater.Data.Migrations
                     table.PrimaryKey("PK_Funciones", x => x.ID);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Usuarios",
+                columns: table => new
+                {
+                    idUsuario = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    nombreUsuario = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    password = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuarios", x => x.idUsuario);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Admin",
+                columns: new[] { "idAdministrador", "nombreAdministrador", "password" },
+                values: new object[] { 1, "Admin", "1234" });
+
             migrationBuilder.InsertData(
                 table: "Asientos",
                 columns: new[] { "IdAsiento", "IsFree" },
@@ -85,7 +118,16 @@ namespace UrbanTheater.Data.Migrations
                     { 17, true },
                     { 18, true },
                     { 19, true },
-                    { 20, true }
+                    { 21, true },
+                    { 22, true },
+                    { 23, true },
+                    { 24, true },
+                    { 25, true },
+                    { 26, true },
+                    { 27, true },
+                    { 28, true },
+                    { 29, true },
+                    { 30, true }
                 });
 
             migrationBuilder.InsertData(
@@ -101,11 +143,19 @@ namespace UrbanTheater.Data.Migrations
                     { 6, "[\"Elena S\\u00E1nchez\",\"Carlos P\\u00E9rez\",\"Mar\\u00EDa L\\u00F3pez\",\"Jos\\u00E9 Torres\",\"Laura Jim\\u00E9nez\"]", "[\"Ana Garc\\u00EDa\",\"Luis Hern\\u00E1ndez\"]", "https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/BodasDeSangre/BodasDeSangre.jpg", "Una comedia romántica contemporánea que sigue la historia de varias parejas que se preparan para sus respectivas bodas. La obra teje una trama llena de enredos amorosos, malentendidos cómicos y momentos de reflexión sobre las relaciones y el matrimonio.", 2, "[\"2024-08-02 - 21:00\",\"2024-08-12 - 20:00\",\"2024-08-21 - 21:00\"]", "[\"https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/BodasDeSangre/BodasDeSangre_NF2.jpg\",\"https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/BodasDeSangre/BodasDeSangre_NF.jpg\"]", "Bodas de sangre" },
                     { 7, "[\"Augusto Gonz\\u00E1lez\",\"Fernando Ard\\u00E9vol\",\"Juan Luis Garc\\u00EDa\"]", "[\"Alberto Marca\",\"Carlos Marco\"]", "https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/B-vocal/b-vocal_LG.jpg", "Un aclamado grupo vocal que destaca por su habilidad para fusionar a cappella y comedia en sus actuaciones. B-Vocal cautiva al público con su mezcla única de música, humor y la sorprendente habilidad de crear sonidos instrumentales con sus voces, explorando diversos géneros musicales desde el pop hasta el clásico.", 1, "[\"2024-09-01 - 21:00\",\"2024-09-03 - 22:30\",\"2024-09-10 - 23:00\"]", "[\"https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/B-vocal/b-vocal_NF.jpg\",\"https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/B-vocal/b.jpg\"]", "B-Vocal" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Usuarios",
+                columns: new[] { "idUsuario", "nombreUsuario", "password" },
+                values: new object[] { 1, "MarioCañizares", "1234" });
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Admin");
+
             migrationBuilder.DropTable(
                 name: "Asientos");
 
@@ -114,6 +164,9 @@ namespace UrbanTheater.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Funciones");
+
+            migrationBuilder.DropTable(
+                name: "Usuarios");
         }
     }
 }

@@ -18,7 +18,7 @@ namespace UrbanTheater.Api.Controllers
 
 
         [HttpGet("{nombreUsuario}/Contrasena/{password}")]
-        public ActionResult<Administrador> GetUsuario(string nombreUsuario, string password)
+        public ActionResult<Admin> GetUsuario(string nombreUsuario, string password)
         {
             var administrador = _administradorService.Get(nombreUsuario, password);
             if (administrador == null)

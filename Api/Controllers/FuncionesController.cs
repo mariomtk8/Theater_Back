@@ -90,7 +90,7 @@ namespace UrbanTheater.Controllers
         {
             if (ListadoAsientos == null || ListadoAsientos.Count == 0)
             {
-                return BadRequest("No hay información de asiento para agregar.");
+                return BadRequest("Agrega los Asientos.");
             }
 
             foreach (var CatchAsiento in ListadoAsientos)

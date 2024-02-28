@@ -21,6 +21,35 @@ namespace UrbanTheater.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("UrbanTheater.Models.Admin", b =>
+                {
+                    b.Property<int>("idAdministrador")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("idAdministrador"));
+
+                    b.Property<string>("nombreAdministrador")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("idAdministrador");
+
+                    b.ToTable("Admin");
+
+                    b.HasData(
+                        new
+                        {
+                            idAdministrador = 1,
+                            nombreAdministrador = "Admin",
+                            password = "1234"
+                        });
+                });
+
             modelBuilder.Entity("UrbanTheater.Models.Asientos", b =>
                 {
                     b.Property<int>("IdAsiento")
@@ -134,7 +163,52 @@ namespace UrbanTheater.Data.Migrations
                         },
                         new
                         {
-                            IdAsiento = 20,
+                            IdAsiento = 21,
+                            IsFree = true
+                        },
+                        new
+                        {
+                            IdAsiento = 22,
+                            IsFree = true
+                        },
+                        new
+                        {
+                            IdAsiento = 23,
+                            IsFree = true
+                        },
+                        new
+                        {
+                            IdAsiento = 24,
+                            IsFree = true
+                        },
+                        new
+                        {
+                            IdAsiento = 25,
+                            IsFree = true
+                        },
+                        new
+                        {
+                            IdAsiento = 26,
+                            IsFree = true
+                        },
+                        new
+                        {
+                            IdAsiento = 27,
+                            IsFree = true
+                        },
+                        new
+                        {
+                            IdAsiento = 28,
+                            IsFree = true
+                        },
+                        new
+                        {
+                            IdAsiento = 29,
+                            IsFree = true
+                        },
+                        new
+                        {
+                            IdAsiento = 30,
                             IsFree = true
                         });
                 });
@@ -291,6 +365,35 @@ namespace UrbanTheater.Data.Migrations
                             Fechas = "[\"2024-09-01 - 21:00\",\"2024-09-03 - 22:30\",\"2024-09-10 - 23:00\"]",
                             Imagenes = "[\"https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/B-vocal/b-vocal_NF.jpg\",\"https://ik.imagekit.io/daniel2003/fotos-descripci%C3%B3n-obras-teatro/B-vocal/b.jpg\"]",
                             Nombre = "B-Vocal"
+                        });
+                });
+
+            modelBuilder.Entity("UrbanTheater.Models.Usuarios", b =>
+                {
+                    b.Property<int>("idUsuario")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("idUsuario"));
+
+                    b.Property<string>("nombreUsuario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("idUsuario");
+
+                    b.ToTable("Usuarios");
+
+                    b.HasData(
+                        new
+                        {
+                            idUsuario = 1,
+                            nombreUsuario = "MarioCañizares",
+                            password = "1234"
                         });
                 });
 #pragma warning restore 612, 618

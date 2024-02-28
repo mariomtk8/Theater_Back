@@ -16,7 +16,7 @@ namespace UrbanTheater.Api.Controllers
         }
 
         [HttpGet("{nombreUsuario}/Contrasena/{password}")]
-        public ActionResult<Usuario> GetUsuario(string nombreUsuario, string password)
+        public ActionResult<Usuarios> GetUsuario(string nombreUsuario, string password)
         {
             var usuario = _usuarioService.Get(nombreUsuario, password);
             if (usuario == null)
@@ -27,7 +27,7 @@ namespace UrbanTheater.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddUsuario([FromBody] Usuario usuarioRequest)
+        public IActionResult AddUsuario([FromBody] Usuarios usuarioRequest)
         {
             if (string.IsNullOrWhiteSpace(usuarioRequest.nombreUsuario) || string.IsNullOrWhiteSpace(usuarioRequest.password))
             {

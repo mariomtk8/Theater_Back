@@ -12,7 +12,7 @@ namespace UrbanTheater.Business
             _administradorRepository = administradorRepository;
         }
 
-        public Administrador? Get(string nombre, string password) =>
+        public Admin? Get(string nombre, string password) =>
             _administradorRepository.Get(nombre, password);
     }
 }

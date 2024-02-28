@@ -4,6 +4,6 @@ namespace UrbanTheater.Business
 {
     public interface IAdminService
     {
-        Administrador? Get(string nombre, string password);
+        Admin? Get(string nombre, string password);
     }
 }

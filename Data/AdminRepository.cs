@@ -13,9 +13,9 @@ namespace UrbanTheater.Data
             _context = context;
         }
 
-        public Administrador Get(string nombre, string password)
+        public Admin Get(string nombre, string password)
         {
-            return _context.Administradores.AsNoTracking().FirstOrDefault(admin => admin.nombreAdministrador == nombre && admin.password == password);
+            return _context.Admin.AsNoTracking().FirstOrDefault(admin => admin.nombreAdministrador == nombre && admin.password == password);
         }
     }
 }

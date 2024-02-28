@@ -5,6 +5,6 @@ namespace UrbanTheater.Data
 {
     public interface IAdminRepository
     {
-        Administrador? Get(string admin, string password);
+        Admin? Get(string admin, string password);
     }
 }
