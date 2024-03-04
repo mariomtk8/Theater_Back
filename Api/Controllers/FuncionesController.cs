@@ -34,7 +34,7 @@ namespace UrbanTheater.Controllers
 
         [HttpPut("{id}")]
         public IActionResult Update(int id, Funciones funcion)
-        {
+        {   
             if (id != funcion.ID)
                 return BadRequest();
 
@@ -76,9 +76,9 @@ namespace UrbanTheater.Controllers
         {
             var asientosId = _funcionService.GetFuncionesAsientos(id, Idsesion);
 
-            if (asientosId == null || asientosId.Count == 0)
+            if (asientosId == null )
             {
-                return NotFound("No seats found for the given obra and session.");
+                return NotFound("No se encontraron los asientos de la sesion .");
             }
 
             return Ok(asientosId);
@@ -86,16 +86,16 @@ namespace UrbanTheater.Controllers
 
 
         [HttpPost("{id}/Sesion/{Idsesion}/ReservarAsiento")]
-        public IActionResult AddAsientosToSession(int id, int Idsesion, [FromBody] List<Asientos> ListadoAsientos)
+        public IActionResult AddAsientosToSession(int id, int Idsesion, [FromBody] AsientosDTO ListadoAsientos)
         {
-            if (ListadoAsientos == null || ListadoAsientos.Count == 0)
+            if (ListadoAsientos == null)
             {
                 return BadRequest("Agrega los Asientos.");
             }
 
-            foreach (var CatchAsiento in ListadoAsientos)
+            foreach (var CatchAsiento in ListadoAsientos.asientos)
             {
-                _funcionService.AddAsientoToFuncion(id, Idsesion, CatchAsiento.IdAsiento, CatchAsiento.IsFree);
+                _funcionService.AddAsientoToFuncion(id, Idsesion, CatchAsiento);
             }
             return Ok("Asiento Añadido.");
         }

@@ -27,9 +27,9 @@ namespace UrbanTheater.Business
         }
 
 
-        public void AddAsientoToFuncion(int funcionId, int sessionId, int idAsiento, bool isFree)
+        public void AddAsientoToFuncion(int funcionId, int sesionId, int idAsiento)
         {
-            _funcionesRepository.AddAsientoToFuncion(funcionId, sessionId, idAsiento, isFree);
+            _funcionesRepository.AddAsientoToFuncion(funcionId, sesionId, idAsiento);
         }
     }
 }

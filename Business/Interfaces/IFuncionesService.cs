@@ -11,6 +11,6 @@ namespace UrbanTheater.Business
         void Add(Funciones obra);
         void Delete(int id);
         List<int> GetFuncionesAsientos(int FuncionID, int IdSesion);
-        void AddAsientoToFuncion(int funcionId, int sessionId, int idAsiento, bool isFree);
+        void AddAsientoToFuncion(int funcionId, int sessionId, int idAsiento);
     }
 }

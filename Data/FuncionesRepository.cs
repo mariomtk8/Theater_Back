@@ -55,14 +55,14 @@ namespace UrbanTheater.Data
         }
 
 
-        public void AddAsientoToFuncion(int funcionId, int sessionId, int idAsiento, bool isFree)
+        public void AddAsientoToFuncion(int funcionId, int sesionId, int idAsiento)
         {
             var nuevoAsiento = new AsientosFunciones
             {
                 IdFuncion = funcionId,
-                IdSesion = sessionId,
+                IdSesion = sesionId,
                 IdAsiento = idAsiento,
-                IsFree = isFree
+                
             };
 
             _context.AsientosFunciones.Add(nuevoAsiento);

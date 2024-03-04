@@ -11,5 +11,4 @@ public class AsientosFunciones
     public int IdFuncion { get; set; }
     public int IdSesion { get; set; }
     public int IdAsiento { get; set; }
-    public bool IsFree { get; set; }
 }

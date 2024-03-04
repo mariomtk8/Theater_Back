@@ -10,7 +10,7 @@ namespace UrbanTheater.Data
         void Update(Funciones funcion);
         void Add(Funciones funcion);
         void Delete(int id);
-        List<int> GetFuncionesAsientos(int ObraID, int IdSesion);
-        void AddAsientoToFuncion(int obraId, int sessionId, int idAsiento, bool isFree);
+        List<int> GetFuncionesAsientos(int FuncionID, int IdSesion);
+        void AddAsientoToFuncion(int funcionId, int sesionId, int idAsiento);
     }
 }
