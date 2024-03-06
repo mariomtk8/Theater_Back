@@ -10,5 +10,6 @@ public class Asientos
     [Key]
     public int IdAsiento { get; set; }
     public bool IsFree { get; set; }
+    public int price { get; set; }
 
 }

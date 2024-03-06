@@ -6,6 +6,7 @@ public class AsientosDTO
 {
     public AsientosDTO() { }
     public List<int> asientos { get; set; }
+    public int price { get; set; }
 }
 
 

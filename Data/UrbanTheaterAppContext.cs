@@ -122,152 +122,183 @@ namespace UrbanTheater.Data
                 new Asientos
                 {
                     IdAsiento = 1,
-                    IsFree = true
+                    IsFree = true,
+                    price = 6
                 },
                 new Asientos
                 {
                     IdAsiento = 2,
-                    IsFree = true
+                    IsFree = true,
+                    price = 6
                 },
                 new Asientos
                 {
                     IdAsiento = 3,
-                    IsFree = true
+                    IsFree = true,
+                    price = 6
                 },
                 new Asientos
                 {
                     IdAsiento = 4,
-                    IsFree = true
+                    IsFree = true,
+                    price = 6
                 },
                 new Asientos
                 {
                     IdAsiento = 5,
-                    IsFree = true
+                    IsFree = true,
+                    price = 6
                 },
                 new Asientos
                 {
                     IdAsiento = 6,
-                    IsFree = true
+                    IsFree = true,
+                    price = 6
                 },
                 new Asientos
                 {
                     IdAsiento = 7,
-                    IsFree = true
+                    IsFree = true,
+                    price = 7
                 },
                 new Asientos
                 {
                     IdAsiento = 8,
-                    IsFree = true
+                    IsFree = true,
+                    price = 7
+                    
                 },
                 new Asientos
                 {
                     IdAsiento = 9,
-                    IsFree = true
+                    IsFree = true,
+                    price = 7
                 },
                 new Asientos
                 {
                     IdAsiento = 10,
-                    IsFree = true
+                    IsFree = true,
+                    price = 7
                 },
                 new Asientos
                 {
                     IdAsiento = 11,
-                    IsFree = true
+                    IsFree = true,
+                    price = 7
                 },
                 new Asientos
                 {
                     IdAsiento = 12,
-                    IsFree = true
+                    IsFree = true,
+                    price = 7
                 },
                 new Asientos
                 {
                     IdAsiento = 13,
-                    IsFree = true
+                    IsFree = true,
+                    price = 9
                 },
                 new Asientos
                 {
                     IdAsiento = 14,
-                    IsFree = true
+                    IsFree = true,
+                    price = 9
                 },
                 new Asientos
                 {
                     IdAsiento = 15,
-                    IsFree = true
+                    IsFree = true,
+                    price = 9
                 },
                 new Asientos
                 {
                     IdAsiento = 16,
-                    IsFree = true
+                    IsFree = true,
+                    price = 9
                 },
                 new Asientos
                 {
                     IdAsiento = 17,
-                    IsFree = true
+                    IsFree = true,
+                    price = 9
                 },
                 new Asientos
                 {
                     IdAsiento = 18,
-                    IsFree = true
+                    IsFree = true,
+                    price = 9
                 },
                 new Asientos
                 {
                     IdAsiento = 19,
-                    IsFree = true
+                    IsFree = true,
+                    price = 8
+                },
+                new Asientos
+                {
+                    IdAsiento = 20,
+                    IsFree = true,
+                    price = 8
                 },
                 new Asientos
                 {
                     IdAsiento = 21,
-                    IsFree = true
+                    IsFree = true,
+                    price = 8
                 },
                 new Asientos
                 {
                     IdAsiento = 22,
-                    IsFree = true
+                    IsFree = true,
+                    price = 8
                 },
                 new Asientos
                 {
                     IdAsiento = 23,
-                    IsFree = true
+                    IsFree = true,
+                    price = 8
                 },
                 new Asientos
                 {
                     IdAsiento = 24,
-                    IsFree = true
+                    IsFree = true,
+                    price = 8
                 },
                 new Asientos
                 {
                     IdAsiento = 25,
-                    IsFree = true
+                    IsFree = true,
+                    price = 6
                 },
                 new Asientos
                 {
                     IdAsiento = 26,
-                    IsFree = true
+                    IsFree = true,
+                    price = 6
                 },
                 new Asientos
                 {
                     IdAsiento = 27,
-                    IsFree = true
+                    IsFree = true,
+                    price = 6
                 },
                 new Asientos
                 {
                     IdAsiento = 28,
-                    IsFree = true
+                    IsFree = true,
+                    price = 6
                 },
                 new Asientos
                 {
-                    IdAsiento = 29,
-                    IsFree = true
+                    IdAsiento = 39,
+                    IsFree = true,
+                    price = 6
                 },
                 new Asientos
                 {
                     IdAsiento = 30,
-                    IsFree = true
-                },
-                new Asientos
-                {
-                    IdAsiento = 31,
-                    IsFree = true
+                    IsFree = true,
+                    price = 6
                 }
             );
             modelBuilder.Entity<Usuarios>().HasData(
