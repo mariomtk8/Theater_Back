@@ -62,6 +62,9 @@ namespace UrbanTheater.Data.Migrations
                     b.Property<bool>("IsFree")
                         .HasColumnType("bit");
 
+                    b.Property<int>("price")
+                        .HasColumnType("int");
+
                     b.HasKey("IdAsiento");
 
                     b.ToTable("Asientos");
@@ -70,152 +73,182 @@ namespace UrbanTheater.Data.Migrations
                         new
                         {
                             IdAsiento = 1,
-                            IsFree = true
+                            IsFree = true,
+                            price = 6
                         },
                         new
                         {
                             IdAsiento = 2,
-                            IsFree = true
+                            IsFree = true,
+                            price = 6
                         },
                         new
                         {
                             IdAsiento = 3,
-                            IsFree = true
+                            IsFree = true,
+                            price = 6
                         },
                         new
                         {
                             IdAsiento = 4,
-                            IsFree = true
+                            IsFree = true,
+                            price = 6
                         },
                         new
                         {
                             IdAsiento = 5,
-                            IsFree = true
+                            IsFree = true,
+                            price = 6
                         },
                         new
                         {
                             IdAsiento = 6,
-                            IsFree = true
+                            IsFree = true,
+                            price = 6
                         },
                         new
                         {
                             IdAsiento = 7,
-                            IsFree = true
+                            IsFree = true,
+                            price = 7
                         },
                         new
                         {
                             IdAsiento = 8,
-                            IsFree = true
+                            IsFree = true,
+                            price = 7
                         },
                         new
                         {
                             IdAsiento = 9,
-                            IsFree = true
+                            IsFree = true,
+                            price = 7
                         },
                         new
                         {
                             IdAsiento = 10,
-                            IsFree = true
+                            IsFree = true,
+                            price = 7
                         },
                         new
                         {
                             IdAsiento = 11,
-                            IsFree = true
+                            IsFree = true,
+                            price = 7
                         },
                         new
                         {
                             IdAsiento = 12,
-                            IsFree = true
+                            IsFree = true,
+                            price = 7
                         },
                         new
                         {
                             IdAsiento = 13,
-                            IsFree = true
+                            IsFree = true,
+                            price = 9
                         },
                         new
                         {
                             IdAsiento = 14,
-                            IsFree = true
+                            IsFree = true,
+                            price = 9
                         },
                         new
                         {
                             IdAsiento = 15,
-                            IsFree = true
+                            IsFree = true,
+                            price = 9
                         },
                         new
                         {
                             IdAsiento = 16,
-                            IsFree = true
+                            IsFree = true,
+                            price = 9
                         },
                         new
                         {
                             IdAsiento = 17,
-                            IsFree = true
+                            IsFree = true,
+                            price = 9
                         },
                         new
                         {
                             IdAsiento = 18,
-                            IsFree = true
+                            IsFree = true,
+                            price = 9
                         },
                         new
                         {
                             IdAsiento = 19,
-                            IsFree = true
+                            IsFree = true,
+                            price = 8
+                        },
+                        new
+                        {
+                            IdAsiento = 20,
+                            IsFree = true,
+                            price = 8
                         },
                         new
                         {
                             IdAsiento = 21,
-                            IsFree = true
+                            IsFree = true,
+                            price = 8
                         },
                         new
                         {
                             IdAsiento = 22,
-                            IsFree = true
+                            IsFree = true,
+                            price = 8
                         },
                         new
                         {
                             IdAsiento = 23,
-                            IsFree = true
+                            IsFree = true,
+                            price = 8
                         },
                         new
                         {
                             IdAsiento = 24,
-                            IsFree = true
+                            IsFree = true,
+                            price = 8
                         },
                         new
                         {
                             IdAsiento = 25,
-                            IsFree = true
+                            IsFree = true,
+                            price = 6
                         },
                         new
                         {
                             IdAsiento = 26,
-                            IsFree = true
+                            IsFree = true,
+                            price = 6
                         },
                         new
                         {
                             IdAsiento = 27,
-                            IsFree = true
+                            IsFree = true,
+                            price = 6
                         },
                         new
                         {
                             IdAsiento = 28,
-                            IsFree = true
+                            IsFree = true,
+                            price = 6
                         },
                         new
                         {
-                            IdAsiento = 29,
-                            IsFree = true
+                            IdAsiento = 39,
+                            IsFree = true,
+                            price = 6
                         },
                         new
                         {
                             IdAsiento = 30,
-                            IsFree = true
-                        },
-                        new
-                        {
-                            IdAsiento = 31,
-                            IsFree = true
+                            IsFree = true,
+                            price = 6
                         });
                 });
 

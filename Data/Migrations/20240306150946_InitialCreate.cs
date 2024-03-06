@@ -33,7 +33,8 @@ namespace UrbanTheater.Data.Migrations
                 {
                     IdAsiento = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IsFree = table.Column<bool>(type: "bit", nullable: false)
+                    IsFree = table.Column<bool>(type: "bit", nullable: false),
+                    price = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -98,39 +99,39 @@ namespace UrbanTheater.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Asientos",
-                columns: new[] { "IdAsiento", "IsFree" },
+                columns: new[] { "IdAsiento", "IsFree", "price" },
                 values: new object[,]
                 {
-                    { 1, true },
-                    { 2, true },
-                    { 3, true },
-                    { 4, true },
-                    { 5, true },
-                    { 6, true },
-                    { 7, true },
-                    { 8, true },
-                    { 9, true },
-                    { 10, true },
-                    { 11, true },
-                    { 12, true },
-                    { 13, true },
-                    { 14, true },
-                    { 15, true },
-                    { 16, true },
-                    { 17, true },
-                    { 18, true },
-                    { 19, true },
-                    { 21, true },
-                    { 22, true },
-                    { 23, true },
-                    { 24, true },
-                    { 25, true },
-                    { 26, true },
-                    { 27, true },
-                    { 28, true },
-                    { 29, true },
-                    { 30, true },
-                    { 31, true }
+                    { 1, true, 6 },
+                    { 2, true, 6 },
+                    { 3, true, 6 },
+                    { 4, true, 6 },
+                    { 5, true, 6 },
+                    { 6, true, 6 },
+                    { 7, true, 7 },
+                    { 8, true, 7 },
+                    { 9, true, 7 },
+                    { 10, true, 7 },
+                    { 11, true, 7 },
+                    { 12, true, 7 },
+                    { 13, true, 9 },
+                    { 14, true, 9 },
+                    { 15, true, 9 },
+                    { 16, true, 9 },
+                    { 17, true, 9 },
+                    { 18, true, 9 },
+                    { 19, true, 8 },
+                    { 20, true, 8 },
+                    { 21, true, 8 },
+                    { 22, true, 8 },
+                    { 23, true, 8 },
+                    { 24, true, 8 },
+                    { 25, true, 6 },
+                    { 26, true, 6 },
+                    { 27, true, 6 },
+                    { 28, true, 6 },
+                    { 30, true, 6 },
+                    { 39, true, 6 }
                 });
 
             migrationBuilder.InsertData(
