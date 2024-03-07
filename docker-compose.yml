@@ -32,10 +32,12 @@ services:
       - db
     environment:
       - DOCKER_CONTAINER=true
-   # web:
+  web:
         #container_name: webContainer
-   #     image: web:1.0
-    #    ports:
-     #       - 9000:8080 
-      #  depends_on:
-       #     - api
+    image: p1:v1
+    ports:
+      - 9001:80
+    depends_on:
+      - api
+    networks: 
+      - backend
