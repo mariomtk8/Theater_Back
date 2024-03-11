@@ -23,7 +23,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: API/Dockerfile
+      dockerfile: Api/Dockerfile
     ports:
       - "80:80"
     # networks:

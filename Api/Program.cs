@@ -5,8 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
-var isRunningInDocker = Environment.GetEnvironmentVariable("DOCKER_CONTAINER") == "true";
-var keyString = isRunningInDocker ? "ServerDB_Docker" : "ServerDB_Local";
+
+var keyString = "ServerDB_Local";
 var connectionString = builder.Configuration.GetConnectionString(keyString);
 
 builder.Services.AddControllers();
@@ -41,9 +41,9 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("MyCorsPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:9001")
-              .AllowAnyMethod()
-              .AllowAnyHeader();
+        policy.AllowAnyOrigin() // Permitir acceso desde cualquier origen
+              .AllowAnyMethod() // Permitir cualquier método HTTP (GET, POST, PUT, etc.)
+              .AllowAnyHeader(); // Permitir cualquier encabezado en la solicitud
     });
 });
 var app = builder.Build();
